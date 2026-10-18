@@ -1,8 +1,10 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
 
+let mainWindow;
+
 function createWindow() {
-  const window = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1120,
     height: 780,
     minWidth: 760,
@@ -15,7 +17,8 @@ function createWindow() {
       sandbox: true
     }
   });
-  window.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.on('closed', () => { mainWindow = null; });
 }
 
 app.whenReady().then(() => {
