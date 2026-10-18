@@ -26,12 +26,6 @@ jobs:
           - name: Linux
             os: ubuntu-latest
             command: npm run dist:linux
-          - name: Windows
-            os: windows-latest
-            command: npm run dist:win
-          - name: macOS
-            os: macos-latest
-            command: npm run dist:mac
     steps:
       - name: Check out source
         uses: actions/checkout@v4

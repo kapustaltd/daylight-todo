@@ -9,9 +9,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --publish never",
-    "dist:linux": "electron-builder --linux AppImage deb --publish never",
-    "dist:win": "electron-builder --win nsis portable --publish never",
-    "dist:mac": "electron-builder --mac dmg zip --publish never"
+    "dist:linux": "electron-builder --linux AppImage deb --publish never"
   },
   "devDependencies": {
     "electron": "^38.2.0",
