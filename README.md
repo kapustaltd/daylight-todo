@@ -8,9 +8,9 @@ The interactive web demo is published at [kapustaltd.github.io/daylight-todo](ht
 
 ## Download
 
-Download the Linux AppImage or `.deb` from the [latest GitHub Release](https://github.com/kapustaltd/daylight-todo/releases/latest). The first release will appear after pushing a version tag such as `v1.0.0`.
+Download the Arch package (`.pacman`) for Omarchy and other Arch-based systems, or the AppImage / `.deb` for other Linux distributions, from the [latest GitHub Release](https://github.com/kapustaltd/daylight-todo/releases/latest).
 
-Every push to `main` builds the Linux AppImage and `.deb`. Those files are available under **Actions → Build desktop app → Artifacts** for 30 days.
+Every push to `main` builds the Linux AppImage, `.deb`, and Arch package. Those files are available under **Actions → Build desktop app → Artifacts** for 30 days.
 
 ## Run from source
 
@@ -26,7 +26,7 @@ npm start
 Build on the operating system you want to package:
 
 ```sh
-npm run dist:linux # AppImage and .deb
+npm run dist:linux # AppImage, .deb, and Arch package
 ```
 
 The packaged files are written to `dist/`.
@@ -40,4 +40,4 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-The workflow attaches the Linux AppImage and `.deb` to the resulting GitHub Release.
+The workflow attaches all three Linux packages to the resulting GitHub Release.

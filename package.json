@@ -1,6 +1,6 @@
 {
   "name": "daylight-todo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A calm, focused desktop todo list",
   "author": "kapustaltd",
   "homepage": "https://github.com/kapustaltd/daylight-todo",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --publish never",
-    "dist:linux": "electron-builder --linux AppImage deb --publish never"
+    "dist:linux": "electron-builder --linux AppImage deb pacman --publish never"
   },
   "devDependencies": {
     "electron": "^38.2.0",
@@ -41,7 +41,19 @@
     "linux": {
       "category": "Office",
       "maintainer": "kapustaltd",
-      "target": ["AppImage", "deb"]
+      "target": ["AppImage", "deb", "pacman"]
+    },
+    "pacman": {
+      "depends": [
+        "gtk3",
+        "libnotify",
+        "nss",
+        "libxss",
+        "libxtst",
+        "xdg-utils",
+        "at-spi2-core",
+        "libsecret"
+      ]
     }
   }
 }
