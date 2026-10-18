@@ -36,6 +36,9 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+      - name: Install pacman packaging tools
+        if: matrix.name == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libarchive-tools
       - name: Package application
         run: ${{ matrix.command }}
       - name: Upload downloadable build
